@@ -548,8 +548,8 @@ def get_keyring_backend(config_path: str) -> keyring.backend.KeyringBackend:
 
             # cryptfile is available, use it
             kr = CryptFileKeyring()
-            if hasattr(kr, "keyring_key"):
-                kr.keyring_key = get_keyring_password()
+            
+            kr.keyring_key = get_keyring_password()
                 
             kr.file_path = get_keyring_file_path(config_path)
 
